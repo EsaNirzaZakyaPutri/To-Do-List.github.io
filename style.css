@@ -1,0 +1,45 @@
+body {
+    background-image: url('img1.jpg');
+    background-size: cover; /* Untuk mengisi seluruh background */
+    background-repeat: no-repeat; /* Agar gambar tidak diulang */
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+#taskList .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Menambahkan posisi relatif untuk kontainer item */
+}
+
+#taskList .list-group-item.done span {
+    text-decoration: line-through;
+}
+
+#taskList .list-group-item.done::before {
+    content: '';
+    display: inline-block;
+    width: 20px; /* Ukuran checkbox */
+    height: 20px; /* Ukuran checkbox */
+    border: 1px solid #ccc; /* Garis border checkbox */
+    margin-right: 10px; /* Jarak antara checkbox dan teks */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white; /* Warna latar belakang checkbox */
+}
+
+#taskList .list-group-item.done::after {
+    content: "\2713";
+    font-size: 1.5em;
+    color: green;
+    position: absolute;
+    left: 3px; /* Posisi centang di dalam checkbox */
+    top: 50%;
+    transform: translateY(-50%);
+}
